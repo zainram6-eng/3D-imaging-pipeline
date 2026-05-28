@@ -1,0 +1,34 @@
+  Contexte
+Le domaine de la métrologie optique a été révolutionné par l’imagerie par illumination structurée, une
+technique de mesure 3D sans contact permettant de modéliser des surfaces avec une précision et une rapidité
+croissantes. L’objectif de ce projet est de concevoir un imageur 3D dédié aux objets de grandes dimensions,
+allant de 1 à 4 m², afin de répondre aux besoins de secteurs industriels tels que l’aéronautique ou le nautisme.
+Pour ce faire, nous utilisons la technologie binaire, qui présente l’avantage de réduire considérablement
+le nombre d’images nécessaires à la reconstruction par rapport aux méthodes classiques. Ce choix technique
+permet de minimiser les capacités de stockage requises et d’accélérer le traitement informatique des données.
+Enfin, notre démarche s’inscrit dans une logique de faible coût, en utilisant des composants grand public comme
+un vidéoprojecteur et une caméra standard, nous visons une résolution de 1 mm.
+La technologie retenue est donc une imagerie 3D par lumière structurée à franges binaires. Le
+vidéoprojecteur joue le rôle d’émetteur en envoyant sur l’objet une succession de motifs noir et blanc, dont les
+franges codent spatialement les positions du projecteur. La caméra observe la déformation de ces franges sur la
+surface mesurée. Après seuillage des images capturées, chaque pixel caméra est associé à un code binaire, ce qui
+permet de retrouver la frange projetée correspondante puis de reconstruire la position 3D par triangulation.
+Le principe consiste à projeter successivement une série de N trames binaires depuis le vidéoprojecteur.
+Chaque trame possède une fréquence spatiale croissante, permettant d’identifier de manière unique chaque
+position éclairée sur l’objet.
+Après une étape préalable de calibration du système projecteur–caméra, chaque point observé par la caméra
+reçoit une succession d’intensités lumineuses (blanc ou noir) au cours des différentes projections. La succession
+de ces états forme alors un mot binaire permettant d’identifier la frange incidente associée à ce point.
+Ainsi, pour N projections binaires, il devient possible de coder jusqu’à 2N positions distinctes du projecteur.
+La correspondance entre pixels caméra et pixels projecteur peut alors être établie, permettant la reconstruction
+tridimensionnelle par triangulation.
+  Objectifs
+L’objectif de ce projet est l’étude et la réalisation d’un imageur tridimensionnel pour objets de grandes
+tailles. Le projet sera réalisé en deux étapes : dans un premier temps nous avons fait une étude théorique ainsi
+qu’une simulation numérique afin d’établir les relations mathématiques et de créer les codes de traitement des
+images. Puis nous avons réalisé un système physique (avec un projecteur et une caméra), et créé une interface
+graphique. Nous voulions aussi imprimer en 3D l’objet reconstruit à échelle réduite.
+Notre capteur doit être en mesure de mesurer de grands objets de 1 à 4 m2 avec une résolution minimale de
+1 mm. De plus, la mesure se fera sans contact, avec la projection d’une série d’image sur un objet, et la mesure
+des rayons réfléchis. Enfin, la calibration du capteur devra se faire de manière automatique à partir d’images
+prises sur un damier.
